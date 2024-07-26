@@ -4,20 +4,20 @@
     --clr-light-blue: #C4DDFE;
     --clr-dark-blue: #2A6FEA;
     --clr-error: #6F0119;
-}
+  }
 
-*{
+  *{
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
-}
+  }
 
-body {
-    background-color: var(--clr-dark);
-}
+  body {
+    background-color: var(--clr-dark);  
+  }
 
-.card {
+  .card {
     width:90%;
     max-width: 470px;
     background: linear-gradient(125deg, var(--clr-light-blue), var(--clr-dark-blue));
@@ -26,16 +26,16 @@ body {
     border-radius: 1.5rem;
     padding: 2rem 2rem;
     text-align: center;
-}
+  }
 
-.search {
+  .form {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+  }
 
-.search input {
+  .form input {
     border: 0;
     outline: 0;
     background: var(--clr-white);
@@ -47,9 +47,9 @@ body {
     margin-right: 1rem;
     font-size: 1.2rem;
     box-shadow: 0 0 1.2rem -0.6rem;                               
-}
+  }
 
-.search button {
+  .form button {
     border: 0;
     outline: 0;
     background: var(--clr-white);
@@ -58,77 +58,72 @@ body {
     height: 3.5rem;
     cursor: pointer;
     box-shadow: 0 0 1.2rem -0.6rem;  
-}
+  }
 
-.i {
+  .i {
     width: 3rem;
-}
+  }
 
-.error {
+  .error {
     text-align: left;
     margin-left: 1.5rem;
     font-size: 1.2rem;
     margin-top: 0.5rem;
-    display: none;
     color: var(--clr-error);
     font-weight: 500;
-}
+  }
 
-.weather-icon {
+  .weather-icon {
     width: 200px;
     margin-top: 1.5rem;
-}
+  }
 
-.weather h1 {
+  .weather h1 {
     font-size: 5rem;
     font-weight: 500;
     text-shadow: 0 0 1.2rem -0.6rem; 
-}
+  }
 
-.weather h2 {
+  .weather h2 {
     font-size: 3rem;
     font-weight: 400;
     margin-top: -10px;
     text-shadow: 0 0 1.2rem -0.6rem; 
-}
+  }
 
-.weather h3 {
+  .weather h3 {
     font-size: 2rem;
     font-weight: 400;
     margin-top: 0.25rem;
     text-shadow: 0 0 1.2rem -0.6rem; 
-}
+  }
 
-.details {
+  .details {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 0.8rem;
     margin-top: 50px;
     text-shadow: 0 0 1.2rem -0.6rem; 
-}
+  }
 
-.col {
+  .col {
     display: flex;
     align-items: center;
     text-align: left;
-}
+  }
 
-.col .symbol-left {
+  .col .symbol-left {
     width: 2rem;
     margin-right: 0.3rem;
-}
+  }
 
-.col .symbol-right {
+  .col .symbol-right {
     width: 2rem;
     margin-right: 0.8rem;
-}
+  }
 
-.humidity, .wind {
+  .humidity, .wind {
     font-size: 1.5rem;
     margin-top: -0.5rem;
-}
-
-.weather {
-    display: none;
-}
+  }
