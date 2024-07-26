@@ -1,7 +1,8 @@
 // useState is used to remember the current state of an element
 import { useState, useEffect } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faDroplet, faWind } from "@fortawesome/free-solid-svg-icons";
+import WeatherForm from "./WeatherForm";
+import WeatherDetails from "./WeatherDetails";
+import ErrorMessage from "./ErrorMessage"
 
 const apiKey = "504fb05cd7cd4ac38d5213023231806";
 const apiUrl = "https://api.weatherapi.com/v1/current.json?&q=";
@@ -60,59 +61,13 @@ export default function WeatherApp() {
     };
  
     return (
-        <div className="card">
-            <form onSubmit={handleSubmit} className="form">
-                <input
-                    type="text"
-                    className="inputCity"
-                    placeholder="Please enter the city name"
-                    required                                                  // An input is required to submit the form
-                    value={city}
-                    onChange={(event) => setCity(event.target.value)}         // Update city state on input change
-                />
-                <button type="submit" className="submitButton">
-                    <FontAwesomeIcon icon={faMagnifyingGlass} size="xl" />
-                </button>
-            </form>
-
-            {/* Conditional rendering: Display an error message if there is an error */}
-            {error && (
-            <div className="error">
-                <p>{error}</p>
-            </div>
-            )}
-
-            {/* Conditional rendering: Display weather information if available */}
-            {weather && (
-                <div className="weather">
-                    <img src={weather.icon} alt="Weather Icon" className="weather-icon" />
-                    <h1 className="temp">{weather.temp}°C</h1>
-                    <h2 className="city">{weather.name}</h2>
-                    <h3 className="region">{weather.region}</h3>
-        
-                    <div className="details">
-                        <div className="col">
-                            <div className="symbol-left">
-                            <FontAwesomeIcon icon={faDroplet} size="2x" />
-                            </div>
-                            <div>
-                            <p className="humidity">{weather.humidity}%</p>
-                            <p>Humidity</p>
-                            </div>
-                        </div>
-        
-                        <div className="col">
-                            <div className="symbol-right">
-                            <FontAwesomeIcon icon={faWind} size="2x" />
-                            </div>
-                            <div>
-                            <p className="wind">{weather.wind} km/h</p>
-                            <p>Wind Speed</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
-        </div>
-   );
+      <div className="card">
+        {/* Display the weather form and handle the submit */}
+        <WeatherForm city={city} setCity={setCity} handleSubmit={handleSubmit} />
+        {/* Display the error message if an error occured */}
+        {error && <ErrorMessage message={error} />}
+        {/* Display the weather details if a valid city was provided */}
+        {weather && <WeatherDetails weather={weather} />}
+      </div>
+    );
 }
